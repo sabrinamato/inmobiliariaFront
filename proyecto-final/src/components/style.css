@@ -1,0 +1,136 @@
+/*____________________ List__________________ */
+.list{
+    width: 100%;
+    display: flex;
+    justify-content:  space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f6eef6;
+    padding-top: 5%;
+}
+.card{
+    width: 20%;
+    height: 48vh;
+    background-color: #65A8A8;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+.card :hover{
+    cursor: pointer;
+}
+.fotoPropiedad{
+    height: 70%;
+    width: 80%;
+    margin-top: 3%;
+    border-radius: 10px;
+}
+.operacion{
+    background-color: #EAD8EB ;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    bottom: 70%;
+    right: 35%;
+    font-weight: 400;
+}
+
+.infoCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "tipo_inmueble dormitorios"
+                            "departamento precio"
+                            "barrio .";
+    gap: 0;
+    font-size: 0.9em;
+    line-height: 1px;
+}
+.infoCard p{
+    margin: 10px;
+}
+.tipo{
+    grid-area: tipo_inmueble;
+}
+.dormitorios{
+    grid-area: dormitorios;
+}
+.departamento{
+    grid-area: departamento;
+
+}
+.barrio{
+    grid-area: barrio;
+}
+.precio{
+    grid-area: precio;
+}
+
+/* _________PORTADA___________ */
+.portada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    background: rgb(6,106,146);
+    background: linear-gradient(140deg, rgba(6,106,146,1) 0%, rgba(4,69,110,1) 48%, rgba(101,168,168,1) 100%);
+}
+.fotoPortada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: cover;
+    width: 70vw;
+    height: 70vh;
+    filter: brightness(50%);
+    border-radius: 10px;
+}
+.flechaSiguiente{
+    height: 100px;
+    width: 100px;
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: 45vh;
+    right: 5vw;
+    height: 10%;
+    width: auto;
+    z-index: 1;
+    filter: invert();
+
+}
+.flechaAnterior{
+    height: 100px;
+    width: 100px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 45vh;
+    left: 5vw;
+    height: 10%;
+    width: auto;    
+    filter: invert();
+    transition-duration: 0.4s;
+
+}
+.flechaAnterior:hover, .flechaSiguiente:hover{
+    cursor: pointer;
+    filter:contrast(1);
+      transition: 0.7s;
+}
+.textoPortada{
+    position: absolute;
+    top: 300px;
+    right: 25vw;
+    width: 50vw;
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+.contenedorPortada {
+    height: fit-content;
+}
