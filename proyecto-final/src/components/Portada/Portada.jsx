@@ -5,7 +5,10 @@ function Portada() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % 3); // Aquí 3 es el número total de imágenes en el carrusel
+    setCurrentIndex((currentIndex + 1) % 3); // 3 es el número total de imágenes en el carrusel
+  };
+  const handlePrevClick = () => {
+    setCurrentIndex((currentIndex - 1 + 3) % 3); // 3 es el número total de imágenes en el carrusel
   };
 
   const images = [
@@ -29,7 +32,7 @@ function Portada() {
         <div
           className="contenedorPortada"
           key={index}
-          style={{ display: index === currentIndex ? "block" : "none" }}
+          style={{ display: index === currentIndex ? "block" : "none" }} //Si el indice de la iagen actual coincide con el almacenado se muestra
         >
           <h1 className="textoPortada">{image.title}</h1>
           <img src={image.src} alt="" className="fotoPortada" />
@@ -43,7 +46,7 @@ function Portada() {
             src="../../Images/flecha.png"
             alt=""
             className="flechaAnterior"
-            onClick={handleNextClick}
+            onClick={handlePrevClick}
           />
         </div>
       ))}
