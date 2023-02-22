@@ -1,0 +1,13 @@
+.Footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100vh;
+    background-color: #65A8A8;
+}
+/* 
+.Footer>img {
+    width: 100vw;
+    height: 500px;
+} */
