@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import VerPublicaciones from "../Modal/VerPublicaciones";
 import "../style.css";
 
 function Administrar() {
+  const [verPublicacionesOpen, setVerPublicacionesOpen] = useState(false);
+  const openVerPubli = () => {
+    setVerPublicacionesOpen(!verPublicacionesOpen);
+  };
+
   return (
     <div className="administrar">
       <Link to={"/"} className="cerrarAdministrar">
@@ -22,10 +28,15 @@ function Administrar() {
             <a href="#">Modificar publicación</a>
           </li>
           <li>
-            <a href="#">Ver publicaciones</a>
+            <a href="#" onClick={openVerPubli}>
+              Ver publicaciones
+            </a>
           </li>
         </ul>
       </nav>
+      {verPublicacionesOpen && (
+        <VerPublicaciones cerrarVerPubli={openVerPubli} />
+      )}
     </div>
   );
 }

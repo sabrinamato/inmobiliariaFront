@@ -7,15 +7,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: #8080804d;
     padding-top: 1%;
     padding-left: 2%;
     padding-right: 2%;
+    gap: 1%;
 
 }
 .card{
-    width: 25%;
+    width: 27%;
     height: 45vh;
     background-color: #262B52;
     margin: 1%;
@@ -45,8 +47,8 @@
     align-items: center;
     border-radius: 20px;
     position: relative;
-    bottom: 70%;
-    right: 35%;
+    bottom: 75%;
+    right: 40%;
     font-weight: 700;
     font-size: 1em;
     color: #262B52;
