@@ -32,7 +32,7 @@ function Portada() {
         <div
           className="contenedorPortada"
           key={index}
-          style={{ display: index === currentIndex ? "block" : "none" }} //Si el indice de la iagen actual coincide con el almacenado se muestra
+          style={{ display: index === currentIndex ? "block" : "none" }} //Si el indice de la imagen actual coincide con el almacenado se muestra
         >
           <h1 className="textoPortada">{image.title}</h1>
           <img src={image.src} alt="" className="fotoPortada" />
