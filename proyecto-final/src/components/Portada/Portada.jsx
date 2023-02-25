@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../style.css";
+import { RightOutlined } from "@ant-design/icons";
 
 function Portada() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,18 +37,11 @@ function Portada() {
         >
           <h1 className="textoPortada">{image.title}</h1>
           <img src={image.src} alt="" className="fotoPortada" />
-          <img
-            src="../../Images/flecha.png"
-            alt=""
+          <RightOutlined
             className="flechaSiguiente"
             onClick={handleNextClick}
           />
-          <img
-            src="../../Images/flecha.png"
-            alt=""
-            className="flechaAnterior"
-            onClick={handlePrevClick}
-          />
+          <RightOutlined className="flechaAnterior" onClick={handlePrevClick} />
         </div>
       ))}
     </div>

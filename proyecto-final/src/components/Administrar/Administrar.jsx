@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Header/Header";
 import VerPublicaciones from "../Modal/VerPublicaciones";
 import "../style.css";
+import {
+  HomeOutlined,
+  DeleteOutlined,
+  EditOutlined,
+  SearchOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 
 function Administrar() {
   const [verPublicacionesOpen, setVerPublicacionesOpen] = useState(false);
@@ -11,32 +17,38 @@ function Administrar() {
   };
 
   return (
-    <div className="administrar">
-      <Link to={"/"} className="cerrarAdministrar">
-        <h3>X</h3>
-      </Link>
-      <h1 className="tituloAdmin">Administrar</h1>
-      <nav className="menuAdministrar">
+    <div className="bgAdmin">
+      <div className="administrar">
+        <Link to={"/"} className="cerrarAdministrar">
+          <h3>X</h3>
+        </Link>
         <ul className="navAdministrar">
           <li>
+            <HomeOutlined className="iconoMenuAdmin" />
+            <h3 className="mas">+</h3>
             <a href="#">Nueva publicación</a>
           </li>
           <li>
+            <DeleteOutlined className="iconoMenuAdmin" />
             <a href="#">Borrar publicación</a>
           </li>
           <li>
+            <EditOutlined className="iconoMenuAdmin" />
             <a href="#">Modificar publicación</a>
           </li>
+          <li onClick={openVerPubli}>
+            <SearchOutlined className="iconoMenuAdmin" />
+            <a href="#">Ver publicaciones</a>
+          </li>
           <li>
-            <a href="#" onClick={openVerPubli}>
-              Ver publicaciones
-            </a>
+            <LogoutOutlined className="iconoMenuAdmin" />
+            <a href="#">Cerrar sesion</a>
           </li>
         </ul>
-      </nav>
-      {verPublicacionesOpen && (
-        <VerPublicaciones cerrarVerPubli={openVerPubli} />
-      )}
+        {verPublicacionesOpen && (
+          <VerPublicaciones cerrarVerPubli={openVerPubli} />
+        )}
+      </div>
     </div>
   );
 }

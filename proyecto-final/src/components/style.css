@@ -114,32 +114,29 @@
 .flechaSiguiente{
     height: 100px;
     width: 100px;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
     position: relative;
     bottom: 30%;
     left: 18%;
-    height: 10%;
-    width: auto;
-    z-index: 1;
-    filter: invert();
+   font-size: 55px;
+    color: white;
 
 }
 .flechaAnterior{
     height: 100px;
     width: 100px;
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
     position: relative;
-    bottom: 30%;
-    right: 65%;
-    height: 10%;
-    width: auto;    
-    filter: invert();
-    transition-duration: 0.4s;
+    bottom: 38%;
+    right: 70%;
+   font-size: 55px;   
+   color: white;
 }
 .flechaAnterior:hover, .flechaSiguiente:hover{
     cursor: pointer;
-    filter:contrast(1);
-      transition: 0.7s;
+    color: #B7F49D;
+    font-size: 65px;
+      transition: 0.6s;
 }
 .textoPortada{
     position: absolute;
@@ -152,24 +149,50 @@
 }
 
 /* __________ADMINISTRAR____________*/
-
-.administrar{
-    background-color: #262B52;
-    height: 100vh;
+.bgAdmin{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../../public/Images/livingAdmin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+.administrar{
+    background-color: #262b52ce;
+    height: 60vh;
+    width: 85%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    height: 60%;
+}
+.navAdministrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   width: 100%;
+   gap: 5%;
+   margin: 0;
+   padding: 0;  
 }
 .navAdministrar li{
     list-style: none;
-    background-color: #EAD8EB;
-    margin: 5%;
-    width: 20vw;
-    height: 5vh;
-    border-radius: 20px;
+    background-color: #B7F49D;
+    width: 12vw;
+    height: 17vh;
+    border-radius: 30px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+   
+}
+.navAdministrar li:hover{
+background-color: #abbeff;
 }
 .navAdministrar a{
 text-decoration: none;
@@ -177,21 +200,25 @@ color: black;
 text-decoration: none;
 font-weight: 500;
 }
-.tituloAdmin{
-    position: absolute ;
-    top: 23%;
-    right: 40%;
-    width: 20%;
-    text-align: center;
-
+.mas{
+    position: absolute;
+    top: 40%;
+    left: 19%;
+}
+.iconoMenuAdmin{
+    font-size: 2em;
 }
 .cerrarAdministrar{
     position: relative;
-    bottom: 30%;
+    bottom: 50%;
+    left: 95%;
+    color: #B7F49D;
     height: 8%;
     font-size: x-large;
-    color: white;
     text-decoration: none;
+}
+.cerrarAdministrar ul:hover{
+color: #abbeff;
 }
 
 /* ___________HOME____________________ */
