@@ -33,6 +33,9 @@ export const listarPropiedades = async (propiedades) => {
                 throw error.response.data.error || "Error procesando la solicitud";
             });
         };    
+
+
+        
         export const nuevaPropiedad = async (propiedades) => {
             const AGREGAR_URL = "/api/propiedades/nuevo";
             return await API.post(AGREGAR_URL, propiedades)
