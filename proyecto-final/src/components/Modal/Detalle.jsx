@@ -1,67 +1,133 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { propiedades } from "../../API/Rule_inmobiliaria";
+import Header from "../Header/Header";
 import "./styleModal.css";
 
-function Modal(props) {
+function Modal() {
+  const { id } = useParams();
 
-    function closeModal() {
-        props.close(false);
-    }
+  const [propiedad, setPropiedad] = useState([]);
 
-    return (
+  const getPropiedades = async () => {
+    await propiedades().then((response) => {
+      const propiedadFilter = response.filter(
+        (propiedad) => propiedad.id == id
+      );
+      setPropiedad(propiedadFilter[0]);
+    });
+  };
+  useEffect(() => {
+    getPropiedades();
+    // console.log(propiedad);
+  });
 
-        <div className="modal containerModal">
-            <div className="containerBtn"><button className="btnClose" onClick={closeModal}>X</button></div>
-            <div className="container1">
-                <div className="modalDetalle">
-                    <div className="container2">
-                        <div className="InmobiliariaGeneral">
-                            <h3>{props.propiedades.id}</h3>
-                            
-                        </div>
-                        <div className="Detalle">
-                            <ul>
-                                <li>{`${props.propiedades.operacion}`}</li>
-                                {/* <li>{`${props.propiedades.tipoInmueble}`}</li>
-                                <li>{`${props.propiedades.departamento} kg`}</li>
-                                <li>{props.propiedades.barrio}</li>
-                                <li>{props.propiedades.precio}</li> */}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="fotoImg">
-                        <img src={`../img/${props.propiedades.foto}.png`} alt="foto" />
-                    </div>
-                </div>
-                <br />
-                <div className="modalParrafo">
-                    <h3>Descripcion</h3>
-                    <p>{props.propiedades.descripcion}</p>
-                </div>
-            </div>
-            <div className="modalDetalle">
-                <h3>Detalles</h3>
-                <div className="containerDetalle">
-                    <label>Tipo Inmueble</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.TipoInmueble}></input>
-                    <label>Departamento</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.departamento}></input>
-                    <label>Barrio</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.barrio}></input>
-                    <label>Precio</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.precio}></input>
-                    <label>Dormitorios</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.dormitorios}></input>
-                    <label>Baños</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.baño}></input>
-                    <label>Metros Terreno</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.metrosTerreno}></input>
-                    <label>Metros Edificio</label>
-                    <input type="range" min={0} max={100} className="inputPropiedades" step={1} value={props.propiedades.metrosEdificio}></input>
-                    
-                </div>
-            </div>
+  return (
+    <div className="contenedorDetalle">
+      <Header />
+      <h1>{propiedad?.operacion}</h1>
+      {/* <div className="detalle">
+        <button className="btnClose" onClick={props.cerrarDetalle}>
+          X
+        </button>
+        <div className="modalDetalle">
+          <h3>{props.propiedad.id}</h3>
+
+          <div className="infoDerecha">
+            <ul>
+              <li>{`${props.propiedad.operacion}`}</li>
+          
+            </ul>
+          </div>
+          <div className="fotoImg">
+            <img src={`../img/${props.propiedad.foto}.png`} alt="foto" />
+          </div>
         </div>
-    );
+        <br />
+        <div className="modalParrafo">
+          <h3>Descripcion</h3>
+          <p>{props.propiedad.descripcion}</p>
+        </div>
+        <div className="modalDetalle">
+          <h3>Detalles</h3>
+          <div className="containerDetalle">
+            <label>Tipo Inmueble</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.TipoInmueble}
+            ></input>
+            <label>Departamento</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.departamento}
+            ></input>
+            <label>Barrio</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.barrio}
+            ></input>
+            <label>Precio</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.precio}
+            ></input>
+            <label>Dormitorios</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.dormitorios}
+            ></input>
+            <label>Baños</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.baño}
+            ></input>
+            <label>Metros Terreno</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.metrosTerreno}
+            ></input>
+            <label>Metros Edificio</label>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="inputPropiedades"
+              step={1}
+              value={props.propiedad.metrosEdificio}
+            ></input>
+          </div>
+        </div>
+      </div> */}
+    </div>
+  );
 }
 
 export default Modal;

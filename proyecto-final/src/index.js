@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Administrar from "./components/Administrar/Administrar";
+import Detalle from "./components/Modal/Detalle";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/administrador",
     element: <Administrar />,
+  },
+  {
+    path: "/propiedad/:id",
+    element: <Detalle />,
   },
 ]);
 

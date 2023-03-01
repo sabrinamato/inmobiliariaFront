@@ -15,9 +15,11 @@ function Header() {
       <h1 className="tituloHeader">MONOPOLIS INMOBILIARIA</h1>
       <nav>
         <ul className="navHeader">
-          <li>
-            <a href="#">Inicio</a>
-          </li>
+          <Link to={"/"}>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+          </Link>
           <li>
             <a href="#">Empresa</a>
           </li>
