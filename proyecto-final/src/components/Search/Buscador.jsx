@@ -5,14 +5,6 @@ import "./styleBuscador.css";
 function Buscador(props) {
   const [nombrePropiedades, setNombrePropiedades] = useState("");
 
-  //   function getPropiedades() {
-  //     props.listPropiedades();
-  //     props.buscar(nombrePropiedades);
-  //   }
-  //   const nombreIngresado = (e) => {
-  //     setNombrePropiedades(e.target.value);
-  //   };
-
   return (
     <>
       <div className="lineaSup"></div>
@@ -55,18 +47,6 @@ function Buscador(props) {
           <option value="5">5</option>
           <option value="mas5">+5</option>
         </select>
-
-        {/* <div className="navSearch">
-        <input
-          className="inputSearch"
-          type="search"
-          placeholder="Buscar..."
-          onChange={nombreIngresado}
-        ></input>
-        <button className="buttonSearch" onClick={getPropiedades}>
-          BUSCAR
-        </button>
-      </div> */}
       </div>
       <div className="lineaInf"></div>
     </>

@@ -5,10 +5,7 @@ import img from "../List/download.jpg";
 import { Link } from "react-router-dom";
 import Detalle from "../Modal/Detalle";
 
-function List() {
-  const [arrayPropyedades, setArrayPropiedades] = useState([]);
-  // const [flag, setFlag] = useState(false);
-
+function List(props) {
   const [propiedadSeleccionada, setPropiedadSeleccionada] = useState({});
 
   const [detalleOpen, setDetalleOpen] = useState(false);
@@ -18,18 +15,9 @@ function List() {
     setPropiedadSeleccionada(propiedad);
   };
 
-  const getPropiedades = async () => {
-    await propiedades().then((response) => {
-      setArrayPropiedades(response);
-    });
-  };
-  useEffect(() => {
-    getPropiedades();
-  });
-
   return (
     <div className="list">
-      {arrayPropyedades.map((propiedad) => {
+      {props.propiedades.map((propiedad) => {
         return (
           <div key={propiedad.id}>
             <Link to={`propiedad/${propiedad.id}`}>
