@@ -25,25 +25,34 @@ function Modal() {
   return (
     <div className="contenedorDetalle">
       <Header />
-      <h1>{propiedad?.operacion}</h1>
-      {/* <div className="detalle">
-        <button className="btnClose" onClick={props.cerrarDetalle}>
-          X
-        </button>
-        <div className="modalDetalle">
-          <h3>{props.propiedad.id}</h3>
-
-          <div className="infoDerecha">
-            <ul>
-              <li>{`${props.propiedad.operacion}`}</li>
-          
-            </ul>
-          </div>
-          <div className="fotoImg">
-            <img src={`../img/${props.propiedad.foto}.png`} alt="foto" />
-          </div>
+      <div className="detalle">
+        <button className="btnClose">X</button>
+        <div className="divFotoDetalle">
+          <img
+            src="../../Images/apartamento1.jpg"
+            alt=""
+            className="fotoDetalle"
+          />
         </div>
-        <br />
+        <div className="infoDerecha">
+          <h3>Caracteristicas</h3>
+          <h3 className="precio">{propiedad?.precio}</h3>
+          <ul>
+            <li>Tipo de operacion: {propiedad?.operacion}</li>
+            <li>Tipo de inmueble: {propiedad?.tipo_inmueble}</li>
+            <li>Departamento: {propiedad?.departamento}</li>
+            <li>Barrio: {propiedad?.barrio}</li>
+            <li>Dormitorios {propiedad?.dormitorios}</li>
+            <li>Baños: {propiedad?.baños}</li>
+            <li>Metraje del terreno: {propiedad?.metros_terreno}</li>
+            <li>Metraje edificio: {propiedad?.metros_edificio}</li>
+          </ul>
+          <p className="descripcionDetalle">
+            Descripcion: {propiedad?.descripcion}
+          </p>
+        </div>
+
+        {/* <br />
         <div className="modalParrafo">
           <h3>Descripcion</h3>
           <p>{props.propiedad.descripcion}</p>
@@ -123,9 +132,9 @@ function Modal() {
               step={1}
               value={props.propiedad.metrosEdificio}
             ></input>
-          </div>
-        </div>
-      </div> */}
+          </div> */}
+        {/* </div> */}
+      </div>
     </div>
   );
 }

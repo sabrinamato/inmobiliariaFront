@@ -92,5 +92,22 @@ z-index: 3;
     position: fixed;
     top: 0px;
     background-color: #bcc0e0;
-
+}
+.fotoDetalle{
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.divFotoDetalle{
+    position: absolute;
+}
+.infoDerecha{
+    position: absolute;
+    bottom: 30%;
+    left: 40%;
+}
+.descripcionDetalle{
+    position: absolute;
+    width: 400%;
+    top: 110%;
+    right: -60% ;
 }

@@ -31,6 +31,10 @@
 .card :hover{
     cursor: pointer;
 }
+a{
+    text-decoration: none;
+    font-style: none;
+}
 .fotoPropiedad{
     height: 70%;
     width: 80%;
