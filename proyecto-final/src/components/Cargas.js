@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
 
     spinner = document.getElementById ("spinner");
@@ -9,3 +11,5 @@ window.onload = function() {
     cargaMovimientosRequest.onload = mostrarMovimientos
     
     agregarMovimientosRequest.onload = resultadoAgregar }
+
+
