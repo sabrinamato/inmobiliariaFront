@@ -1,15 +1,24 @@
-import logo from "./logo.svg";
+
 import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import Terreno from "./components/pages/terreno/Terreno";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    
+    <BrowserRouter>
+    
+    <Routes>
+    
+    <Route path="/" element={<div>Ruta raiz</div>}/>
+    
+
+    
+    <Route path="/terreno" element={<Terreno/>}/>
+    <Route path="*" element={<Navigate to="/"/>}/>
+    </Routes>
+    
+    </BrowserRouter>
   );
 }
 
