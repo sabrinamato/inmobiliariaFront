@@ -1,43 +1,63 @@
 import React, { useState } from "react";
+import { SearchOutlined } from "@ant-design/icons";
 
 import "./styleBuscador.css";
 
 function Buscador(props) {
-  const [nombrePropiedades, setNombrePropiedades] = useState("");
+  const [operacion, setOperacion] = useState(null);
+  const [departamento, setDepartamento] = useState(null);
+  const [tipoInmueble, setTipoInmueble] = useState(null);
+  const [dormitorios, setDormitorios] = useState(null);
 
   return (
     <>
       <div className="lineaSup"></div>
       <div className="searchBar">
-        <select name="operacion" className="selectSearchBar">
-          <option value="operacion" selected>
+        <select
+          name="operacion"
+          className="selectSearchBar"
+          onChange={(e) => setOperacion(e.target.value)}
+        >
+          <option value="" selected>
             Operacion
           </option>
-          <option value="alqulier">Alquiler</option>
-          <option value="venta">Venta</option>
+          <option value="Alquila">Alquila</option>
+          <option value="Venta">Venta</option>
           <option value="alquilerVenta">Alquiler y Venta</option>
         </select>
 
-        <select name="departamento" className="departamento">
-          <option value="departamento" selected>
+        <select
+          name="departamento"
+          className="departamento"
+          onChange={(e) => setDepartamento(e.target.value)}
+        >
+          <option value="" selected>
             Departamento
           </option>
-          <option value="montevideo">Montevideo</option>
+          <option value="Montevideo">Montevideo</option>
           <option value="Canelones">Canelones</option>
-          <option value="maldonado">Maldonado</option>
+          <option value="Maldonado">Maldonado</option>
         </select>
 
-        <select name="inmueble" className="inmueble">
-          <option value="inmueble" selected>
+        <select
+          name="inmueble"
+          className="inmueble"
+          onChange={(e) => setTipoInmueble(e.target.value)}
+        >
+          <option value="" selected>
             Tipo de inmueble
           </option>
-          <option value="casa">Casa</option>
-          <option value="apto">Apartamento</option>
-          <option value="terrenos">Terrenos</option>
+          <option value="Casa">Casa</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Terrenos">Terrenos</option>
         </select>
 
-        <select name="dormitorios" className="dormitorios">
-          <option value="dormitorios" selected>
+        <select
+          name="dormitorios"
+          className="dormitorios"
+          onChange={(e) => setDormitorios(e.target.value)}
+        >
+          <option value="" selected>
             Dormitorios
           </option>
           <option value="1">1</option>
@@ -47,8 +67,21 @@ function Buscador(props) {
           <option value="5">5</option>
           <option value="mas5">+5</option>
         </select>
+        <SearchOutlined
+          className="buscar"
+          onClick={() => {
+            /*if (operacion === "operacion") {
+              operacion = null;
+            }*/
+            props.setFiltro({
+              operacion: operacion || null,
+              departamento: departamento || null,
+              tipo_inmueble: tipoInmueble || null,
+              dormitorios: dormitorios || null,
+            });
+          }}
+        />
       </div>
-      <div className="lineaInf"></div>
     </>
   );
 }

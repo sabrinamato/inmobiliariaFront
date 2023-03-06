@@ -8,6 +8,7 @@ function Modal() {
   const { id } = useParams();
 
   const [propiedad, setPropiedad] = useState([]);
+  const [flag, setFlag] = useState(false);
 
   const getPropiedades = async () => {
     await propiedades().then((response) => {
@@ -20,7 +21,7 @@ function Modal() {
   useEffect(() => {
     getPropiedades();
     // console.log(propiedad);
-  });
+  }, [flag]);
 
   return (
     <div className="contenedorDetalle">

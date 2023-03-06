@@ -21,6 +21,9 @@ select{
     bottom: 50%;
     background-color: #abbeff;
 }
+.buscar{
+    font-size: 1.5em;
+}
 /* .lineaInf{
     height: 5px;
     width: 100%;
