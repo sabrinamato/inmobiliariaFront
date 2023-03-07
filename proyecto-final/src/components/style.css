@@ -13,11 +13,11 @@
     padding-top: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    gap: 1%;
+    gap: 5%;
 
 }
 .card{
-    width: 85%;
+    width: 270px;
     height: 42vh;
     background-color: #262B52;
     margin: 2%;
@@ -36,15 +36,15 @@ a{
     font-style: none;
 }
 .fotoPropiedad{
-    height: 70%;
-    width: 80%;
+    height: 226px;
+    width: 220px;
     margin-top: 3%;
     border-radius: 10px;
 }
 .operacion {
     background-color: #B7F49D ;
-    width: 30%;
-    height: 10%;
+    width: 80px;
+    height: 30px;
     text-align: center;
     display: flex;
     justify-content: center;

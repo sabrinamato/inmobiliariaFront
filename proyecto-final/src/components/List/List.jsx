@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { propiedades } from "../../API/Rule_inmobiliaria";
 import "../style.css";
-import img from "../List/download.jpg";
 import { Link } from "react-router-dom";
 import Detalle from "../Modal/Detalle";
 
@@ -22,7 +21,7 @@ function List(props) {
           <div key={propiedad.id}>
             <Link to={`propiedad/${propiedad.id}`}>
               <div className="card">
-                <img src={img} alt="" className="fotoPropiedad" />
+                <img src={propiedad.foto} alt="" className="fotoPropiedad" />
                 <label className="operacion">{propiedad.operacion}</label>
                 <div className="infoCard">
                   <p className="tipo">{propiedad.tipo_inmueble}</p>

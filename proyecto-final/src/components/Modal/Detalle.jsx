@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { propiedades } from "../../API/Rule_inmobiliaria";
 import Header from "../Header/Header";
 import "./styleModal.css";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 
 function Modal() {
   const { id } = useParams();
@@ -27,17 +28,17 @@ function Modal() {
     <div className="contenedorDetalle">
       <Header />
       <div className="detalle">
-        <button className="btnClose">X</button>
+        <Link to={"/"}>
+          <div className="atrasDetalle">
+            <ArrowLeftOutlined /> Atras
+          </div>
+        </Link>
         <div className="divFotoDetalle">
-          <img
-            src="../../Images/apartamento1.jpg"
-            alt=""
-            className="fotoDetalle"
-          />
+          <img src={propiedad?.foto} alt="" className="fotoDetalle" />
         </div>
         <div className="infoDerecha">
           <h3>Caracteristicas</h3>
-          <h3 className="precio">{propiedad?.precio}</h3>
+          <h3 className="precio">U$S {propiedad?.precio}</h3>
           <ul>
             <li>Tipo de operacion: {propiedad?.operacion}</li>
             <li>Tipo de inmueble: {propiedad?.tipo_inmueble}</li>

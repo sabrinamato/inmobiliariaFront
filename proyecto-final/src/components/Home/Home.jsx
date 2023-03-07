@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import List from "../List/List";
 import Portada from "../Portada/Portada";
 import Buscador from "../Search/Buscador";

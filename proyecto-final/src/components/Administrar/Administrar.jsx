@@ -9,11 +9,17 @@ import {
   SearchOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
+import AgregarPubli from "../Modal/AgregarPubli";
 
 function Administrar() {
   const [verPublicacionesOpen, setVerPublicacionesOpen] = useState(false);
   const openVerPubli = () => {
     setVerPublicacionesOpen(!verPublicacionesOpen);
+  };
+
+  const [verAgregarPublicacion, setAgregarPublicacion] = useState(false);
+  const openAgregarPubli = () => {
+    setAgregarPublicacion(!verAgregarPublicacion);
   };
 
   return (
@@ -23,7 +29,7 @@ function Administrar() {
           <h3>X</h3>
         </Link>
         <ul className="navAdministrar">
-          <li>
+          <li onClick={openAgregarPubli}>
             <HomeOutlined className="iconoMenuAdmin" />
             <h3 className="mas">+</h3>
             <a href="#">Nueva publicación</a>
@@ -47,6 +53,9 @@ function Administrar() {
         </ul>
         {verPublicacionesOpen && (
           <VerPublicaciones cerrarVerPubli={openVerPubli} />
+        )}
+        {setAgregarPublicacion && (
+          <AgregarPubli cerrarAgregarPubli={openAgregarPubli} />
         )}
       </div>
     </div>

@@ -93,22 +93,45 @@ z-index: 3;
     position: fixed;
     top: 0px;
     background-color: #bcc0e0;
+   
+}
+.detalle{
+    padding: 2% 3% 3% 3%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    /* align-items: center; */
 }
 .fotoDetalle{
-    margin-top: 2%;
-    margin-left: 5%;
+    height: 40vh;
+    width: auto;
 }
 .divFotoDetalle{
-    position: absolute;
+    /* position: absolute; */
 }
 .infoDerecha{
-    position: absolute;
+    /* position: absolute; */
     bottom: 30%;
     left: 40%;
+    width: 40%;
 }
 .descripcionDetalle{
     position: absolute;
-    width: 400%;
-    top: 110%;
-    right: -60% ;
+    left: 10%;
+    bottom: 15%;
+    padding: 0 8% 0 5%;
+}
+.btnClose{
+    position: absolute;
+}
+.atrasDetalle{
+    position: absolute;
+    right: 5%;
+    text-decoration: none;
+    color: black;
+}
+.atrasDetalle :hover{
+    cursor: pointer;
 }
