@@ -17,25 +17,13 @@ function LoginComp() {
     setContraseña(e.target.value);
   };
 
-  /*      const navigate = useNavigate();
-        function iraHome() {
-            navigate('/home')
-        } 
-        
-        function formRegistrar() {
-            navigate('/registro')
-        } 
-     */
-
   return (
     <>
       <div className="div-contenedor">
         <form className="form">
           <h2 className="titulo"> INICIAR SESION </h2>
           <div className="div-form">
-            <label className="label1" htmlFor="usuario">
-              {" "}
-            </label>
+            <label className="label1" htmlFor="usuario"></label>
             <input
               className="input1"
               type="text"
@@ -59,9 +47,9 @@ function LoginComp() {
           <Link to={"/home"}>
             <button /* onClick={} */ className="button"> Ingresar </button>
           </Link>
-          {/* <Link to={"/registro"}> */}
-          <button /* onClick={} */ className="registro">REGISTRARSE</button>
-          {/* </Link> */}
+          <Link to={"/register"}>
+            <button /* onClick={} */ className="registro">REGISTRARSE</button>
+          </Link>
           <div className="contra-olvidada">
             {/* <a className="contra-olvidada" href="#" >  Olividaste tu contraseña? </a> */}
           </div>

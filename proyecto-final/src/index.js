@@ -7,11 +7,16 @@ import Home from "./components/Home/Home";
 import Administrar from "./components/Administrar/Administrar";
 import Detalle from "./components/Modal/Detalle";
 import LoginComp from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginComp />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     path: "/home",
