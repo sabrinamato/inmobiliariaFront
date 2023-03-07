@@ -6,10 +6,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Administrar from "./components/Administrar/Administrar";
 import Detalle from "./components/Modal/Detalle";
+import LoginComp from "./components/Login/Login";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LoginComp />,
+  },
+  {
+    path: "/home",
     element: <Home />,
   },
   {
