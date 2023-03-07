@@ -70,9 +70,6 @@ function Buscador(props) {
         <SearchOutlined
           className="buscar"
           onClick={() => {
-            /*if (operacion === "operacion") {
-              operacion = null;
-            }*/
             props.setFiltro({
               operacion: operacion || null,
               departamento: departamento || null,
