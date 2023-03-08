@@ -1,5 +1,5 @@
 import React from 'react'
-import {nuevaPubli} from '../API/rule_nuevaPubli'
+import {nuevaPubli} from '../API/nuevaPubli'
 import { useState } from 'react';
 
 function AgregarPublicacion() {
