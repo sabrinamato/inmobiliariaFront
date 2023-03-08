@@ -1,5 +1,5 @@
 .header {
-    height: 20vh;
+    height: 22vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
 .navHeader{
     display: flex;
     position: relative;
-    top: 8vh;
+    top: 7vh;
     left: 10vw;
 }
 .navHeader li{
@@ -52,5 +52,6 @@
 .navHeader a{
     text-decoration: none;
     color: #22223d;
+    font-size: 0.9rem;
 
 }

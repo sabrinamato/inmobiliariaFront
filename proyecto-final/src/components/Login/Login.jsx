@@ -3,7 +3,8 @@
 import React from "react";
 import "./LoginComp.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../API/Rule_User";
 
 function LoginComp() {
   const [usuario, setUsuario] = useState("");
@@ -15,6 +16,21 @@ function LoginComp() {
 
   const onChangeValueContraseña = (e) => {
     setContraseña(e.target.value);
+  };
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("mensaje", usuario, contraseña);
+    await login({ email: usuario, contraseña: contraseña })
+      .then((response) => {
+        console.log("response", response);
+        navigate("/home");
+        // alert(response.token);
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   return (
@@ -44,11 +60,11 @@ function LoginComp() {
               onChange={onChangeValueContraseña}
             />
           </div>
-          <Link to={"/home"}>
-            <button /* onClick={} */ className="button"> Ingresar </button>
-          </Link>
+          <button onClick={handleSubmit} className="button">
+            Ingresar
+          </button>
           <Link to={"/register"}>
-            <button /* onClick={} */ className="registro">REGISTRARSE</button>
+            <button className="registro">REGISTRARSE</button>
           </Link>
           <div className="contra-olvidada">
             {/* <a className="contra-olvidada" href="#" >  Olividaste tu contraseña? </a> */}

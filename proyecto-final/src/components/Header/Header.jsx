@@ -12,10 +12,10 @@ function Header() {
       <div className="Logo">
         <img src="../Images/Logo_inmobiliaria-sinBg.png" alt="Logo" />
       </div>
-      <h1 className="tituloHeader">MONOPOLIS INMOBILIARIA</h1>
+      <h1 className="tituloHeader">MONÓPOLIS INMOBILIARIA</h1>
       <nav>
         <ul className="navHeader">
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <li>
               <a href="#">Inicio</a>
             </li>

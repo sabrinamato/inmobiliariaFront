@@ -4,16 +4,16 @@ import React from "react";
 import { useState } from "react";
 import "./register.css";
 // import { registrarUsuario } from "../API/rule_registrar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { registerUser } from "../../API/Rule_User";
 
 function Registro() {
-  // VERIFICAR QUE ESTO ESTE CORRECTO//
-  /*  const navigate = useNavigate(); */
+  const navigate = useNavigate();
 
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [email, setEmail] = useState("");
-  const [confirmarContraseña, setConfirmarContraseña] = useState("");
+  // const [confirmarContraseña, setConfirmarContraseña] = useState("");
 
   const onChangeValueContraseña = (e) => {
     setContraseña(e.target.value);
@@ -27,20 +27,28 @@ function Registro() {
     setEmail(e.target.value);
   };
 
-  const onChangeConfirmarContraseña = (e) => {
-    setConfirmarContraseña(e.target.value);
-  };
+  // const onChangeConfirmarContraseña = (e) => {
+  //   setConfirmarContraseña(e.target.value);
+  // };
 
-  const onSubmitRegister = (e) => {
-    e.preventDefault();
-    console.log(e);
-
+  const onSubmitRegister = async (e) => {
     const user = {
-      username: usuario,
+      usuario: usuario,
       contraseña: contraseña,
       email: email,
-      confirmarContraseña: confirmarContraseña,
+      // confirmarContraseña: confirmarContraseña,
     };
+
+    e.preventDefault();
+    await registerUser(user)
+      .then(() => {
+        navigate("/home");
+        alert("Usuario creado correctamente");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+
     // registrarUsuario(user).then((response) => {});
   };
 
@@ -57,6 +65,7 @@ function Registro() {
               name="Usuario"
               required
               placeholder="Usuario"
+              onChange={onChangeValueUsuario}
             />
           </div>
           <div className="div-form2">
@@ -67,6 +76,7 @@ function Registro() {
               name="Email"
               required
               placeholder="Email"
+              onChange={onChangeValueEmail}
             />
           </div>
           <div className="div-form3">
@@ -77,9 +87,10 @@ function Registro() {
               name="Contraseña"
               required
               placeholder="Contraseña"
+              onChange={onChangeValueContraseña}
             />
           </div>
-          <div className="div-form4">
+          {/* <div className="div-form4">
             <label className="label4" htmlFor="confirmar-contraseña"></label>
             <input
               className="input4"
@@ -88,12 +99,14 @@ function Registro() {
               required
               placeholder="Confirmar Contraseña"
             />
-          </div>
-          {/* <Link to={"/login"} >  */}{" "}
-          <button type="submit" className="but-registro">
+          </div> */}
+          <button
+            type="submit"
+            className="but-registro"
+            onClick={onSubmitRegister}
+          >
             REGISTRAR
           </button>
-          {/* </Link> */}
         </form>
       </div>
     </>

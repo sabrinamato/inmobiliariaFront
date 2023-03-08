@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { propiedades } from "../../API/Rule_inmobiliaria";
 import "./styleModal.css";
 
@@ -16,9 +17,9 @@ function VerPublicaciones(props) {
   return (
     <div className="contenedorVerPubli">
       <div className="verPubli">
-        <button onClick={props.cerrarVerPubli} className="cerrarVerPubli">
+        <h3 onClick={props.cerrarVerPubli} className="cerrarModal">
           X
-        </button>
+        </h3>
         {arrayPropyedades.map((propiedades) => {
           return (
             <div className="contenedorCardAdmin">
@@ -27,7 +28,7 @@ function VerPublicaciones(props) {
                   {propiedades.operacion}
                 </label>
                 <img
-                  src="../../Images/apartamento1.jpg"
+                  src={propiedades.foto}
                   alt=""
                   className="fotoPropiedadAdm"
                 />

@@ -3,6 +3,7 @@
 .list{
     width: 70%;
     margin-top: 1%;
+    margin-bottom: 2%;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
@@ -18,9 +19,10 @@
 }
 .card{
     width: 270px;
-    height: 42vh;
+    height: 340px;
     background-color: #262B52;
     margin: 2%;
+    margin-bottom: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +53,7 @@ a{
     align-items: center;
     border-radius: 20px;
     position: relative;
-    bottom: 75%;
+    bottom: 74%;
     right: 40%;
     font-weight: 700;
     font-size: 1em;
@@ -66,7 +68,7 @@ a{
                             "departamento precio"
                             "barrio .";
     gap: 0;
-    font-size: 1em;
+    font-size: 0.85em;
     line-height: 1px;
     position: relative;
     bottom: 5%;
@@ -118,7 +120,6 @@ a{
 .flechaSiguiente{
     height: 100px;
     width: 100px;
-    /* transform: rotate(90deg); */
     position: relative;
     bottom: 30%;
     left: 18%;
@@ -206,15 +207,15 @@ font-weight: 500;
 }
 .mas{
     position: absolute;
-    top: 40%;
-    left: 19%;
+    top: 43%;
+    left: 21%;
 }
 .iconoMenuAdmin{
     font-size: 2em;
 }
 .cerrarAdministrar{
     position: relative;
-    bottom: 50%;
+    bottom: 40%;
     left: 95%;
     color: #B7F49D;
     height: 8%;
@@ -239,4 +240,53 @@ color: #abbeff;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* ___________DETALLE________ */
+.contenedorDetalle{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    background-color: #bcc0e0;
+   
+}
+.detalle{
+    padding: 2% 3% 3% 3%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    /* align-items: center; */
+}
+.fotoDetalle{
+    height: 40vh;
+    width: auto;
+}
+.divFotoDetalle{
+    /* position: absolute; */
+}
+.infoDerecha{
+    /* position: absolute; */
+    bottom: 30%;
+    left: 40%;
+    width: 40%;
+}
+.descripcionDetalle{
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+    padding: 0 8% 0 5%;
+}
+.btnClose{
+    position: absolute;
+}
+.atrasDetalle{
+    position: absolute;
+    right: 5%;
+    text-decoration: none;
+    color: black;
+}
+.atrasDetalle :hover{
+    cursor: pointer;
 }

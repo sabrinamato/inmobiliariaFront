@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { propiedades } from "../../API/Rule_inmobiliaria";
 import "../style.css";
 import { Link } from "react-router-dom";
-import Detalle from "../Modal/Detalle";
+import Detalle from "../DetallePropiedad/Detalle";
 
 function List(props) {
   const [propiedadSeleccionada, setPropiedadSeleccionada] = useState({});
@@ -19,7 +19,7 @@ function List(props) {
       {props.propiedades.map((propiedad) => {
         return (
           <div key={propiedad.id}>
-            <Link to={`propiedad/${propiedad.id}`}>
+            <Link to={`/home/propiedad/${propiedad.id}`}>
               <div className="card">
                 <img src={propiedad.foto} alt="" className="fotoPropiedad" />
                 <label className="operacion">{propiedad.operacion}</label>

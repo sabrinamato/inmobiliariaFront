@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Administrar from "./components/Administrar/Administrar";
-import Detalle from "./components/Modal/Detalle";
+import Detalle from "./components/DetallePropiedad/Detalle";
 import LoginComp from "./components/Login/Login";
 import Register from "./components/Register/Register";
 
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <Administrar />,
   },
   {
-    path: "/propiedad/:id",
+    path: "/home/propiedad/:id",
     element: <Detalle />,
   },
 ]);

@@ -46,7 +46,7 @@ function Home() {
           <List propiedades={arrayPropiedades} />
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

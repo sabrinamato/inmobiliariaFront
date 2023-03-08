@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { propiedades } from "../../API/Rule_inmobiliaria";
 import Header from "../Header/Header";
-import "./styleModal.css";
+import "../style.css";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 
 function Modal() {
@@ -28,7 +28,7 @@ function Modal() {
     <div className="contenedorDetalle">
       <Header />
       <div className="detalle">
-        <Link to={"/"}>
+        <Link to={"/home"}>
           <div className="atrasDetalle">
             <ArrowLeftOutlined /> Atras
           </div>
