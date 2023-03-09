@@ -1,5 +1,24 @@
 
+import React from 'react';
+//import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { useRouteError } from "react-router-dom";
+
+
+function onSubmit(e) {
+    e.preventDefault();
+
+    axios
+      .post('/propiedad', book)
+      .then(res => {
+        navigate('/');
+        NotificationManager.success('Has agregado una nueva propiedad', 2000);
+      })
+      .catch(err => {
+        NotificationManager.error('la Propiedad no se pudo agregar!', 'Error!');
+      })
+  };
+
 
 export default function ErrorPage() {
     const error = useRouteError();
