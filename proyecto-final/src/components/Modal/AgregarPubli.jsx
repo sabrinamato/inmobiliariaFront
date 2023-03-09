@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { nuevaPubli } from "../../API/Rule_inmobiliaria";
-import "./styleModal.css";
-// import "./agregarPublicacion.css";
+import "./agregarPublicacion.css";
 
 function AgregarPubli(props) {
   const [operacion, setOpreacion] = useState("");
@@ -17,8 +16,8 @@ function AgregarPubli(props) {
   const [foto, setFoto] = useState("");
   const [texto, setTexto] = useState("");
 
-  const onSubmitPublicacion = (e) => {
-    e.preventDefault();
+  const onSubmitPublicacion = async (e) => {
+    console.log(publicacion);
     const publicacion = {
       operacion: operacion,
       tipoInmueble: tipoInmueble,
@@ -32,12 +31,20 @@ function AgregarPubli(props) {
       descripcion: descripcion,
       foto: foto,
     };
-    if (e.target[11].checked) {
-      setTexto("Agregando nueva publicación");
-      nuevaPubli(publicacion).then((response) => {
-        setTexto("Nueva publicación agregada exitosamente");
+
+    // if (e.target[11].checked) {
+    //   e.preventDefault();
+    // setTexto("Agregando nueva publicación");
+    await nuevaPubli(publicacion)
+      .then(() => {
+        alert("Publicacion creada");
+
+        // setTexto("Nueva publicación agregada exitosamente");
+      })
+      .catch((error) => {
+        alert(error);
       });
-    }
+    // }
   };
   const onChangeValueOperacion = (e) => {
     setOpreacion(e.target.value);
@@ -86,7 +93,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueOperacion}
-                value={tipoInmueble}
+                value={operacion}
                 required
                 placeholder="Operacion"
                 type="text"
@@ -98,7 +105,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueTipoInmueble}
-                value={departamento}
+                value={tipoInmueble}
                 required
                 placeholder="Tipo de Inmueble"
                 type="text"
@@ -110,7 +117,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueDepartamento}
-                value={barrio}
+                value={departamento}
                 required
                 placeholder="Departamento"
                 type="text"
@@ -123,7 +130,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueBarrio}
-                value={precio}
+                value={barrio}
                 required
                 placeholder="Barrio"
                 type="text"
@@ -135,7 +142,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValuePrecio}
-                value={dormitorios}
+                value={precio}
                 required
                 placeholder="Precio"
                 type="text"
@@ -147,7 +154,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueDormitorios}
-                value={baños}
+                value={dormitorios}
                 required
                 placeholder="Dormitorios"
                 type="text"
@@ -159,7 +166,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueBaños}
-                value={metrosCuadrados}
+                value={baños}
                 required
                 placeholder="Baños"
                 type="text"
@@ -171,7 +178,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueMetrosCuadrados}
-                value={metroEdificio}
+                value={metrosCuadrados}
                 required
                 placeholder="Metros Cuadrados"
                 type="text"
@@ -183,7 +190,7 @@ function AgregarPubli(props) {
               <input
                 className="formInput"
                 onChange={onChangeValueMetrosEdificio}
-                value={descripcion}
+                value={metroEdificio}
                 required
                 placeholder="Metro del Edificio"
                 type="text"
