@@ -22,3 +22,12 @@ export const filtrarPropiedades = async (params) => {
       throw error.response.data.error || "Error precesando la solicitud";
     });
 };
+export const nuevaPubli = async (propiedad) => {
+  return await API.post("/api/propiedades/add", propiedad)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};

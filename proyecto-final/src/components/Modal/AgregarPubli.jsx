@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { nuevaPubli } from "../../API/Rule_inmobiliaria";
 import "./styleModal.css";
-import { nuevaPubli } from "../API/nuevaPubli";
 // import "./agregarPublicacion.css";
 
 function AgregarPubli(props) {
