@@ -5,8 +5,9 @@ import LoginComp from "./components/LoginComp";
 import Home from "./routes/Home";
 import Registro from './routes/Registro'
 import {Routes } from 'react-router';
+import AgregarPublicacion from "./components/AgergarPublicacion";
 
-import AgregarPublicacion from './components/AgregarPublicacion'
+
 
 
 

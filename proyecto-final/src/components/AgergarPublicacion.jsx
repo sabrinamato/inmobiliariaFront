@@ -1,6 +1,8 @@
 import React from 'react'
 import {nuevaPubli} from '../API/nuevaPubli'
 import { useState } from 'react';
+import './agregarPublicacion.css'
+
 
 function AgregarPublicacion() {
 
@@ -71,9 +73,8 @@ function AgregarPublicacion() {
         <>
             <div className="nuevaPublicacion">
                 <form  >
-
-                
                     <div className="formtDiv" onSubmit={onSubmitPublicacion}>
+                      <h2  className='titulo-registro' >REGISTRAR</h2>
                         <label className="formLabel" htmlFor="operacion"></label>
                         <input className="formInput" onChange={onChangeValueOperacion}  value={tipoInmueble}  required placeholder="Operacion" type="text" name="operacion" />
                     </div>
@@ -116,7 +117,7 @@ function AgregarPublicacion() {
                     </div>
                     <div className="formDiv">
                         <label className="formLabel" htmlFor="foto"></label>
-                        <input className="formInput"  onChange={onChangeValueFoto} value={foto}  required placeholder="Agregar foto" type="file" name="foto" />
+                        <input className="formInput-file"  onChange={onChangeValueFoto} value={foto}  required placeholder="Agregar foto" type="file" name="foto" />
                     </div>
 
                     <button id="boton" type="submit" name="crear" value="crear">
