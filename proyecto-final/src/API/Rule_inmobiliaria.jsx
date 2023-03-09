@@ -1,4 +1,6 @@
 import API from "./Rule_API";
+// const formData = new FormData();
+// formData.append("img", fileInput.files[0]);
 
 export const propiedades = async () => {
   let url = "/api/propiedades";
@@ -25,6 +27,16 @@ export const filtrarPropiedades = async (params) => {
 
 export const nuevaPubli = async (propiedad) => {
   return await API.post("/api/propiedades/add", propiedad)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error.response.data.error;
+    });
+};
+
+export const addFoto = async (formData) => {
+  return await API.post("/propiedades/add/foto", formData)
     .then((response) => {
       return response.data;
     })
