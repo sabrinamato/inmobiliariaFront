@@ -40,11 +40,9 @@ z-index: 3;
 }
 .cardAdmin{
     background-color: #262b52;
-    margin: 2px;
     height: 25vh;
     width: 446px;
     border-radius: 10px;
-    padding: auto;
 }
 .infoCardAdmin{
     font-size: 0.8em;
@@ -55,7 +53,8 @@ z-index: 3;
     left: 71%;
     bottom: 60%;
     color: white;
-       ;
+    margin-top: 5px;
+    padding-top: 5px;
 }
 .operacionAdmin{
     position: relative;
@@ -64,7 +63,7 @@ z-index: 3;
     color: #B7F49D;
 }
 .infoCard p{
-    margin: 10px;
+    margin-top: 10px;
 }
 .tipo{
     grid-area: tipo_inmueble;
@@ -88,6 +87,7 @@ z-index: 3;
     position: relative;
     top: 6%;
     right: 9%;
+    object-fit: cover;
 }
 .contenedorCardAdmin{
     height: max-content;
@@ -110,7 +110,7 @@ z-index: 3;
     
     .agregarPubli{
         width: 80%;
-        height: 80%;
+        height: 90%;
         box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         background-color: #bcc0e0;

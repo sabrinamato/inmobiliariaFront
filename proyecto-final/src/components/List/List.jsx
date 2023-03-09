@@ -20,9 +20,9 @@ function List(props) {
         return (
           <div key={propiedad.id}>
             <Link to={`/home/propiedad/${propiedad.id}`}>
+              <label className="operacion">{propiedad.operacion}</label>
               <div className="card">
                 <img src={propiedad.foto} alt="" className="fotoPropiedad" />
-                <label className="operacion">{propiedad.operacion}</label>
                 <div className="infoCard">
                   <p className="tipo">{propiedad.tipo_inmueble}</p>
                   <p className="departamento">{propiedad.departamento}</p>

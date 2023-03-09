@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     /* height:180vh; */
+    width: 100%;
 }
 
 .formtDiv {
@@ -27,7 +28,7 @@
 #boton{
     padding:10px 25px;
     margin-left: 70px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius:10px;
     border: none;
     background-color:#B7F49D;
@@ -43,13 +44,13 @@
     font-weight:lighter;
     padding-bottom: 10px;
     color: black;
-    animation: desplazar 5s infinite;
+    animation: desplazar  5s infinite;
 } @keyframes desplazar {
     0% {
       transform: translateX(0);
     }
-    50% {
-      transform: translateX(50%);
+    40% {
+      transform: translateX(40%);
     }
     100% {
       transform: translateX(0);

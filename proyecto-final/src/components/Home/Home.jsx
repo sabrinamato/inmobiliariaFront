@@ -45,8 +45,8 @@ function Home() {
         <div className="scrol">
           <List propiedades={arrayPropiedades} />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

@@ -10,7 +10,7 @@ function Header() {
   return (
     <div className="header">
       <div className="Logo">
-        <img src="../Images/Logo_inmobiliaria-sinBg.png" alt="Logo" />
+        <img src="/Images/Logo_inmobiliaria-sinBg.png" alt="Logo" />
       </div>
       <h1 className="tituloHeader">MONÓPOLIS INMOBILIARIA</h1>
       <nav>

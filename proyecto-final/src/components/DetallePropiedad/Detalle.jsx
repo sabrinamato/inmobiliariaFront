@@ -37,8 +37,8 @@ function Modal() {
           <img src={propiedad?.foto} alt="" className="fotoDetalle" />
         </div>
         <div className="infoDerecha">
-          <h3>Caracteristicas</h3>
-          <h3 className="precio">U$S {propiedad?.precio}</h3>
+          <h3>Caracteristicas</h3> <br />
+          <h3 className="precioDetalle">U$S {propiedad?.precio}</h3>
           <ul>
             <li>Tipo de operacion: {propiedad?.operacion}</li>
             <li>Tipo de inmueble: {propiedad?.tipo_inmueble}</li>
