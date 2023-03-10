@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { nuevaPubli } from "../../API/Rule_inmobiliaria";
+// import { addFoto, nuevaPubli } from "../../API/Rule_inmobiliaria";
 import "./agregarPublicacion.css";
 
 function AgregarPubli(props) {
@@ -16,6 +17,8 @@ function AgregarPubli(props) {
   const [foto, setFoto] = useState("");
   const [texto, setTexto] = useState("");
 
+  const [file, setFile] = useState({});
+
   const onSubmitPublicacion = async (e) => {
     console.log(publicacion);
     const publicacion = {
@@ -29,23 +32,28 @@ function AgregarPubli(props) {
       metrosCuadrados: metrosCuadrados,
       metroEdificio: metroEdificio,
       descripcion: descripcion,
-      foto: foto,
+      foto: "/Image/" + foto,
     };
-
+    console.log(foto);
     // if (e.target[11].checked) {
     //   e.preventDefault();
     // setTexto("Agregando nueva publicación");
     await nuevaPubli(publicacion)
       .then(() => {
         alert("Publicacion creada");
-
-        // setTexto("Nueva publicación agregada exitosamente");
       })
       .catch((error) => {
         alert(error);
       });
-    // }
+    // await addFoto(file)
+    //   .then(() => {
+    //     alert("Publicacion creada");
+    //   })
+    //   .catch((error) => {
+    //     alert(error);
+    //   });
   };
+
   const onChangeValueOperacion = (e) => {
     setOpreacion(e.target.value);
   };
@@ -77,7 +85,8 @@ function AgregarPubli(props) {
     setDescripcion(e.target.value);
   };
   const onChangeValueFoto = (e) => {
-    setFoto(e.target.value);
+    setFoto(e.target.files[0].name);
+    setFile(e.target.files[0]);
   };
   return (
     <div className="contenedorAgregarPubli">
@@ -219,6 +228,7 @@ function AgregarPubli(props) {
                 placeholder="Agregar foto"
                 type="file"
                 name="foto"
+                accept=".png,.jpg"
               />
             </div>
 

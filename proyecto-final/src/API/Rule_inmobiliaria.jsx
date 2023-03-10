@@ -44,3 +44,15 @@ export const addFoto = async (formData) => {
       throw error.response.data.error;
     });
 };
+
+export const deleteProp = async (id) => {
+  let url = "/api/propiedades/delete/" + id;
+  return await API.delete(url)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+      throw error.response.data.error || "Error precesando la solicitud";
+    });
+};

@@ -5,14 +5,16 @@ import { EditOutlined } from "@ant-design/icons";
 import FormModificarPublicacion from "./FormModificarPublicacion";
 
 function ModificarPublicacion(props) {
+  const [propiedadModificar, setPropiedadModificar] = useState({});
+
   const [formModificar, setFormModificar] = useState(false);
-  const openFormModificar = () => {
+
+  const openFormModificar = (propiedades) => {
+    setPropiedadModificar(propiedades);
     setFormModificar(!formModificar);
-    console.log(formModificar);
   };
 
   const [arrayPropiedades, setArrayPropiedades] = useState([]);
-  const [flag, setFlag] = useState(false);
   const getPropiedades = async () => {
     await propiedades().then((response) => {
       setArrayPropiedades(response);
@@ -20,7 +22,7 @@ function ModificarPublicacion(props) {
   };
   useEffect(() => {
     getPropiedades();
-  }, [flag]);
+  }, []);
   return (
     <div className="contenedorModificarPubli">
       <div className="modificarPubli">
@@ -32,7 +34,7 @@ function ModificarPublicacion(props) {
             <div className="contenedorCardAdmin">
               <EditOutlined
                 className="editarAdmin"
-                onClick={openFormModificar}
+                onClick={() => openFormModificar(propiedades)}
               />
               <div className="cardAdmin">
                 <label className="operacionAdmin">
@@ -58,7 +60,10 @@ function ModificarPublicacion(props) {
           );
         })}
         {formModificar && (
-          <FormModificarPublicacion cerrarFormModificar={openFormModificar} />
+          <FormModificarPublicacion
+            cerrarFormModificar={openFormModificar}
+            propiedad={propiedadModificar}
+          />
         )}
       </div>
     </div>

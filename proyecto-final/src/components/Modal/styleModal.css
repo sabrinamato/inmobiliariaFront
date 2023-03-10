@@ -209,7 +209,7 @@ z-index: 3;
         z-index: 3;
         }
         
-        .formModificar{
+        .contModificar{
             width: 82%;
             height: 82%;
             box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
@@ -232,4 +232,91 @@ z-index: 3;
             left:35%;
             bottom: 35%;
             z-index: 3;
+        }
+        .formModificar{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items:center;
+            height: 380px;
+            width: 60%;
+            flex-wrap: wrap;
+            padding-bottom: 9%;
+        }
+        .imputFormModificar{
+            border-radius: 20px;
+            width: 200px;
+            height: 30px;
+            border-width: 1px;
+            border-width: 2px;
+            border-color: #262b52;
+        }
+        .operacionModificar{
+            width: 200px;
+            height: 30px;
+            position: absolute;
+            top: 10px;
+            background-color: white;
+            border-width: 1px;
+            border-width: 2px;
+            border-color: #262b52;
+        }
+        .imputFormModificarDescrip{
+            position: absolute;
+            bottom: 120px;
+        }
+        .imputFormModificarDescrip input{
+            height: 80px;
+            width: 590px;
+            border-radius: 25px;
+            border-width: 2px;
+            border-color: #262b52;
+        }
+        .submitModificar{
+            position: absolute;
+            bottom: 50px;
+            height: 30px;
+            border-radius: 20px;
+            width: 200px;
+            background-color: #B7F49D;
+        }
+
+        /* ________________BORRAR MODAL____________ */
+        .contenedorModalBorrar{
+            height: 100vh;
+            width: 100vw;
+            background-color: #23263a8f;
+            z-index: 3;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modalBorrar{
+            height: 50%;
+            width: 60%;
+            background-color: rgb(225, 225, 243);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .buttonBorrar{
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btnBorrarPubli{
+            background-color: #B7F49D;
+            width: 50px;
+            margin: 2%;
+            border-radius: 20px;
+            border-style: ridge;
+            border-width: 1px;
+            border-color: #262b52;
+            width: 50px;
+            height: 30px;
+
         }
