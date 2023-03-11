@@ -1,0 +1,89 @@
+/* // css de componente login // */
+*{
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;  
+} 
+.div-contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(270deg, #262B52 0%, #B7F49D 100%);
+}
+.div-form{
+    padding: 10px 25px;
+}
+.div-form2{
+    padding: 10px 25px;
+}
+.input1, .input2{
+padding: 10px;
+border-radius: 5px;
+border: none;
+margin-bottom: 25px;
+}
+.button{
+    padding:10px 25px;
+    margin-left: 70px;
+    margin-top: 20px;
+    border-radius:10px;
+    border: none;
+    background-color:#B7F49D;
+    font-size: 11pt;
+    cursor: pointer;
+    text-align:end;
+    text-decoration: none;
+    color: black;
+}
+.titulo{
+    font-size: 25pt;
+    font-weight:lighter;
+    padding-bottom: 10px;
+    color: white;
+    animation: desplazar 5s infinite;
+}
+@keyframes desplazar {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+.contra-olvidada{
+    display:flex;
+    justify-content: end;
+    font-size: 10px;
+    padding: 20px ;
+    padding-bottom: 30px;
+    text-decoration:none;
+    margin-right: 15px;
+    font-style: oblique;
+    color: black;
+
+}
+.registro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px ;
+    margin-left: 70px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    background-color:  #abbeff;
+    border-radius: 10px;
+    border-color:#65A8A8 ;
+    color:black;
+    text-decoration: none;
+} 
+/*  background-image: url(../images/cast\ Inmuebles.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+            
