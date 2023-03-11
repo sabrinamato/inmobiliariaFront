@@ -29,21 +29,26 @@ function Portada() {
 
   return (
     <div className="portada">
-      {images.map((image, index) => (
-        <div
-          className="contenedorPortada"
-          key={index}
-          style={{ display: index === currentIndex ? "block" : "none" }} //Si el indice de la imagen actual coincide con el almacenado se muestra
-        >
-          <h1 className="textoPortada">{image.title}</h1>
-          <img src={image.src} alt="" className="fotoPortada" />
-          <RightOutlined
-            className="flechaSiguiente"
-            onClick={handleNextClick}
-          />
-          <RightOutlined className="flechaAnterior" onClick={handlePrevClick} />
-        </div>
-      ))}
+      <div className="opacidad">
+        {images.map((image, index) => (
+          <div
+            className="contenedorPortada"
+            key={index}
+            style={{ display: index === currentIndex ? "block" : "none" }} //Si el indice de la imagen actual coincide con el almacenado se muestra
+          >
+            <h1 className="textoPortada">{image.title}</h1>
+            <img src={image.src} alt="" className="fotoPortada" />
+            <RightOutlined
+              className="flechaSiguiente"
+              onClick={handleNextClick}
+            />
+            <RightOutlined
+              className="flechaAnterior"
+              onClick={handlePrevClick}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

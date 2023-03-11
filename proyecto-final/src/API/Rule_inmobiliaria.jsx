@@ -56,3 +56,16 @@ export const deleteProp = async (id) => {
       throw error.response.data.error || "Error precesando la solicitud";
     });
 };
+
+export const modify = async (params, id) => {
+  console.log(params);
+  let url = "/api/propiedades/editar/" + id;
+  return await API.patch(url, params)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+      throw error.response.data.error || "Error precesando la solicitud";
+    });
+};

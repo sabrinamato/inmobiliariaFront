@@ -36,7 +36,7 @@ function LoginComp() {
   return (
     <>
       <div className="div-contenedor">
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <h2 className="titulo"> INICIAR SESION </h2>
           <div className="div-form">
             <label className="label1" htmlFor="usuario"></label>
@@ -60,11 +60,13 @@ function LoginComp() {
               onChange={onChangeValueContraseña}
             />
           </div>
-          <button onClick={handleSubmit} className="button">
+          <button type="submit" className="button">
             Ingresar
           </button>
           <Link to={"/register"}>
-            <button className="registro">REGISTRARSE</button>
+            <button className="registro" type="submit">
+              REGISTRARSE
+            </button>
           </Link>
           <div className="contra-olvidada">
             {/* <a className="contra-olvidada" href="#" >  Olividaste tu contraseña? </a> */}

@@ -1,14 +1,16 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { deleteProp } from "../../API/Rule_inmobiliaria";
 import "./styleModal.css";
 
 function ModalBorrar(props) {
   const id = props.propiedad.id;
-
+  const cerrar = props.cerrarModalBorrar;
   const borrarProp = async () => {
     await deleteProp(id)
       .then(() => {
         alert("Propiedad eliminada correctamente");
+        props.cerrarModalBorrar();
       })
       .catch((error) => {
         alert(error);

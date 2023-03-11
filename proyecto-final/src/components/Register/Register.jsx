@@ -55,7 +55,7 @@ function Registro() {
   return (
     <>
       <div className="div-general">
-        <form className="form-registro">
+        <form className="form-registro" onSubmit={onSubmitRegister}>
           <h2 className="titulo"> Crear nuevo usuario </h2>
           <div className="div-form1">
             <label className="labe1" htmlFor="usuario"></label>
@@ -83,30 +83,21 @@ function Registro() {
             <label className="label3" htmlFor="contraseña"></label>
             <input
               className="input3"
-              type="text"
+              type="password"
               name="Contraseña"
               required
               placeholder="Contraseña"
               onChange={onChangeValueContraseña}
             />
           </div>
-          {/* <div className="div-form4">
-            <label className="label4" htmlFor="confirmar-contraseña"></label>
-            <input
-              className="input4"
-              type="text"
-              name="confirmar-contraseña"
-              required
-              placeholder="Confirmar Contraseña"
-            />
-          </div> */}
-          <button
-            type="submit"
-            className="but-registro"
-            onClick={onSubmitRegister}
-          >
-            REGISTRAR
-          </button>
+          <div className="buttonsLogin">
+            <button type="submit" className="but-registro">
+              REGISTRAR
+            </button>
+            <Link to={"/"}>
+              <button className="but-log">INGRESAR</button>
+            </Link>
+          </div>
         </form>
       </div>
     </>

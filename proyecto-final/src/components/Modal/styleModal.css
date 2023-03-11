@@ -239,16 +239,15 @@ z-index: 3;
             gap: 15px;
             align-items:center;
             height: 380px;
-            width: 60%;
+            width: 50%;
             flex-wrap: wrap;
             padding-bottom: 9%;
         }
         .imputFormModificar{
-            border-radius: 20px;
+            border-radius: 5px;
             width: 200px;
             height: 30px;
             border-width: 1px;
-            border-width: 2px;
             border-color: #262b52;
         }
         .operacionModificar{
@@ -258,8 +257,8 @@ z-index: 3;
             top: 10px;
             background-color: white;
             border-width: 1px;
-            border-width: 2px;
             border-color: #262b52;
+            border-radius: 5px;
         }
         .imputFormModificarDescrip{
             position: absolute;
@@ -268,8 +267,8 @@ z-index: 3;
         .imputFormModificarDescrip input{
             height: 80px;
             width: 590px;
-            border-radius: 25px;
-            border-width: 2px;
+            border-radius: 10px;
+            border-width: 1px;
             border-color: #262b52;
         }
         .submitModificar{
@@ -287,7 +286,11 @@ z-index: 3;
             width: 100vw;
             background-color: #23263a8f;
             z-index: 3;
-            position: absolute;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; 
             display: flex;
             justify-content: center;
             align-items: center;

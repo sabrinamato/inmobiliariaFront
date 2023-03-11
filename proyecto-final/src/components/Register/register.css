@@ -66,4 +66,22 @@
       transform: translateX(0);
     }
   }
-
+  .buttonsLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+  }
+.but-log{
+  padding:10px 25px;
+  margin-left: 55px;
+  margin-top: 20px;
+  border-radius:10px;
+  border: none;
+  background-color:#abbeff;
+  font-size: 11pt;
+  cursor: pointer;
+  text-align:end;
+  text-decoration: none;
+  color: black;
+}

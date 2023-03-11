@@ -1,92 +1,78 @@
 import React, { useState } from "react";
-import { nuevaPubli } from "../../API/Rule_inmobiliaria";
-// import { addFoto, nuevaPubli } from "../../API/Rule_inmobiliaria";
+import { addFoto, nuevaPubli } from "../../API/Rule_inmobiliaria";
+// import { addFoto } from "../../API/Rule_inmobiliaria";
 import "./agregarPublicacion.css";
 
 function AgregarPubli(props) {
   const [operacion, setOpreacion] = useState("");
-  const [tipoInmueble, setTipoInmueble] = useState("");
+  const [tipo_inmueble, setTipo_inmueble] = useState("");
   const [departamento, setDepartamento] = useState("");
   const [barrio, setBarrio] = useState("");
   const [precio, setPrecio] = useState("");
   const [dormitorios, setDormitorios] = useState("");
   const [baños, setBaños] = useState("");
-  const [metrosCuadrados, setMetrosCuadrados] = useState("");
-  const [metroEdificio, setMetroEdificio] = useState("");
+  const [metros_terreno, setMetrosTerreno] = useState("");
+  const [metros_edificio, setMetros_edificio] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [foto, setFoto] = useState("");
-  const [texto, setTexto] = useState("");
 
-  const [file, setFile] = useState({});
+  const [file, setFile] = useState({
+    data: {
+      name: "",
+    },
+  });
 
-  const onSubmitPublicacion = async (e) => {
-    console.log(publicacion);
+  const nuevaPublicacion = async (publicacion) => {
+    await nuevaPubli(publicacion).then(() => {
+      alert("Publicacion agregada");
+    });
+  };
+
+  const descargarFoto = async (file) => {
+    await addFoto(file).then((response) => {
+      console.log(response);
+    });
+  };
+
+  const onSubmitPublicacion = (e) => {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("operacion", operacion);
+    formData.append("tipo_inmueble", tipo_inmueble);
+    formData.append("departamento", departamento);
+    formData.append("barrio", barrio);
+    formData.append("precio", precio);
+    formData.append("dormitorios", dormitorios);
+    formData.append("baños", baños);
+    formData.append("metros_terreno", metros_terreno);
+    formData.append("metros_edificio", metros_edificio);
+    formData.append("descripcion", descripcion);
+    formData.append("foto", file.data.name);
+
     const publicacion = {
-      operacion: operacion,
-      tipoInmueble: tipoInmueble,
-      departamento: departamento,
-      barrio: barrio,
-      precio: precio,
-      dormitorios: dormitorios,
-      baños: baños,
-      metrosCuadrados: metrosCuadrados,
-      metroEdificio: metroEdificio,
-      descripcion: descripcion,
-      foto: "/Image/" + foto,
+      operacion,
+      tipo_inmueble,
+      departamento,
+      barrio,
+      precio,
+      dormitorios,
+      baños,
+      metros_terreno,
+      metros_edificio,
+      descripcion,
+      foto,
     };
-    console.log(foto);
-    // if (e.target[11].checked) {
-    //   e.preventDefault();
-    // setTexto("Agregando nueva publicación");
-    await nuevaPubli(publicacion)
-      .then(() => {
-        alert("Publicacion creada");
-      })
-      .catch((error) => {
-        alert(error);
-      });
-    // await addFoto(file)
-    //   .then(() => {
-    //     alert("Publicacion creada");
-    //   })
-    //   .catch((error) => {
-    //     alert(error);
-    //   });
+    nuevaPublicacion(publicacion);
+    descargarFoto(file);
   };
 
-  const onChangeValueOperacion = (e) => {
-    setOpreacion(e.target.value);
-  };
-  const onChangeValueTipoInmueble = (e) => {
-    setTipoInmueble(e.target.value);
-  };
-  const onChangeValueDepartamento = (e) => {
-    setDepartamento(e.target.value);
-  };
-  const onChangeValueBarrio = (e) => {
-    setBarrio(e.target.value);
-  };
-  const onChangeValuePrecio = (e) => {
-    setPrecio(e.target.value);
-  };
-  const onChangeValueDormitorios = (e) => {
-    setDormitorios(e.target.value);
-  };
-  const onChangeValueBaños = (e) => {
-    setBaños(e.target.value);
-  };
-  const onChangeValueMetrosCuadrados = (e) => {
-    setMetrosCuadrados(e.target.value);
-  };
-  const onChangeValueMetrosEdificio = (e) => {
-    setMetroEdificio(e.target.value);
-  };
-  const onChangeValueDescripcion = (e) => {
-    setDescripcion(e.target.value);
-  };
   const onChangeValueFoto = (e) => {
-    setFoto(e.target.files[0].name);
-    setFile(e.target.files[0]);
+    console.log(e.target.files[0]);
+    const image = {
+      data: e.target.files[0],
+    };
+    setFile(image);
+    console.log(file.name);
   };
   return (
     <div className="contenedorAgregarPubli">
@@ -95,37 +81,39 @@ function AgregarPubli(props) {
           X
         </h3>
         <div className="nuevaPublicacion">
-          <form>
-            <div className="formtDiv" onSubmit={onSubmitPublicacion}>
+          <form onSubmit={onSubmitPublicacion}>
+            <div className="formtDiv">
               <h2 className="titulo-registro">REGISTRAR</h2>
-              <label className="formLabel" htmlFor="operacion"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueOperacion}
-                value={operacion}
-                required
-                placeholder="Operacion"
-                type="text"
-                name="operacion"
-              />
+              <label className="formLabel" htmlFor="operacion">
+                <input
+                  className="formInput"
+                  onChange={(e) => setOpreacion(e.target.value)}
+                  value={operacion}
+                  required
+                  placeholder="Operacion"
+                  type="text"
+                  name="operacion"
+                />
+              </label>
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="tipoInmueble"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueTipoInmueble}
-                value={tipoInmueble}
-                required
-                placeholder="Tipo de Inmueble"
-                type="text"
-                name="tipoInmueble"
-              />
+              <label className="formLabel" htmlFor="tipoInmueble">
+                <input
+                  className="formInput"
+                  onChange={(e) => setTipo_inmueble(e.target.value)}
+                  value={tipo_inmueble}
+                  required
+                  placeholder="Tipo de Inmueble"
+                  type="text"
+                  name="tipoInmueble"
+                />
+              </label>
             </div>
             <div className="formtDiv">
               <label className="formLabel" htmlFor="departamento"></label>
               <input
                 className="formInput"
-                onChange={onChangeValueDepartamento}
+                onChange={(e) => setDepartamento(e.target.value)}
                 value={departamento}
                 required
                 placeholder="Departamento"
@@ -138,7 +126,7 @@ function AgregarPubli(props) {
               <label className="formLabel" htmlFor="barrio"></label>
               <input
                 className="formInput"
-                onChange={onChangeValueBarrio}
+                onChange={(e) => setBarrio(e.target.value)}
                 value={barrio}
                 required
                 placeholder="Barrio"
@@ -147,89 +135,96 @@ function AgregarPubli(props) {
               />
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="precio"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValuePrecio}
-                value={precio}
-                required
-                placeholder="Precio"
-                type="text"
-                name="precio"
-              />
+              <label className="formLabel" htmlFor="precio">
+                <input
+                  className="formInput"
+                  onChange={(e) => setPrecio(e.target.value)}
+                  value={precio}
+                  required
+                  placeholder="Precio"
+                  type="text"
+                  name="precio"
+                />
+              </label>
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="dormitorios"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueDormitorios}
-                value={dormitorios}
-                required
-                placeholder="Dormitorios"
-                type="text"
-                name="dormitorios"
-              />
+              <label className="formLabel" htmlFor="dormitorios">
+                <input
+                  className="formInput"
+                  onChange={(e) => setDormitorios(e.target.value)}
+                  value={dormitorios}
+                  required
+                  placeholder="Dormitorios"
+                  type="text"
+                  name="dormitorios"
+                />
+              </label>
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="baños"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueBaños}
-                value={baños}
-                required
-                placeholder="Baños"
-                type="text"
-                name="baños"
-              />
+              <label className="formLabel" htmlFor="baños">
+                <input
+                  className="formInput"
+                  onChange={(e) => setBaños(e.target.value)}
+                  value={baños}
+                  required
+                  placeholder="Baños"
+                  type="text"
+                  name="baños"
+                />
+              </label>
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="metrosCuadrados"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueMetrosCuadrados}
-                value={metrosCuadrados}
-                required
-                placeholder="Metros Cuadrados"
-                type="text"
-                name="metrosCuadrados"
-              />
+              <label className="formLabel" htmlFor="metrosCuadrados">
+                <input
+                  className="formInput"
+                  onChange={(e) => setMetrosTerreno(e.target.value)}
+                  value={metros_terreno}
+                  required
+                  placeholder="Metros Cuadrados"
+                  type="text"
+                  name="metrosCuadrados"
+                />
+              </label>
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="metroEdificio"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueMetrosEdificio}
-                value={metroEdificio}
-                required
-                placeholder="Metro del Edificio"
-                type="text"
-                name="metroEdificio"
-              />
+              <label className="formLabel" htmlFor="metroEdificio">
+                <input
+                  className="formInput"
+                  onChange={(e) => setMetros_edificio(e.target.value)}
+                  value={metros_edificio}
+                  required
+                  placeholder="Metro del Edificio"
+                  type="text"
+                  name="metroEdificio"
+                />
+              </label>
             </div>
             <div className="formtDiv">
-              <label className="formLabel" htmlFor="descripcion"></label>
-              <input
-                className="formInput"
-                onChange={onChangeValueDescripcion}
-                value={descripcion}
-                required
-                placeholder="Descripcion"
-                type="text"
-                name="descripcion"
-              />
+              <label className="formLabel" htmlFor="descripcion">
+                <input
+                  className="formInput"
+                  onChange={(e) => setDescripcion(e.target.value)}
+                  value={descripcion}
+                  required
+                  placeholder="Descripcion"
+                  type="text"
+                  name="descripcion"
+                />
+              </label>
             </div>
             <div className="formDiv">
-              <label className="formLabel" htmlFor="foto"></label>
-              <input
-                className="formInput-file"
-                onChange={onChangeValueFoto}
-                value={foto}
-                required
-                placeholder="Agregar foto"
-                type="file"
-                name="foto"
-                accept=".png,.jpg"
-              />
+              <label className="formLabel">
+                <input
+                  className="formInput-file"
+                  onChange={onChangeValueFoto}
+                  value={file.name}
+                  required
+                  placeholder="Agregar foto"
+                  type="file"
+                  name="foto"
+                  // accept=".png,.jpg"
+                />
+              </label>
             </div>
 
             <button id="boton" type="submit" name="crear" value="crear">

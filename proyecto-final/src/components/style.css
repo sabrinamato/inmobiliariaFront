@@ -96,7 +96,18 @@ a{
     justify-content: center;
     align-items: center;
     height: 78vh; 
+    /* background-image: url("../../public/Images/bg3.jpg"); */
     background-color: #262B52;
+    background-position: center;
+    background-size: cover;
+}
+.opacidad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;   
+    /* background-color: #8c96b86b; */
 }
 .contenedorPortada{
     height: 100%;
@@ -226,8 +237,9 @@ color: #abbeff;
 /* ___________HOME____________________ */
 .bgImage{
     background-image: url("../../public/Images/bg.jpg");
-    background-position: center;
-    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-size:cover;
     position: sticky;
     top: 0;
     height: 100%;
