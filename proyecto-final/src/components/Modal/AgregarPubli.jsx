@@ -29,7 +29,9 @@ function AgregarPubli(props) {
   };
 
   const descargarFoto = async (file) => {
-    await addFoto(file).then((response) => {
+    let formData = new FormData();
+    formData.append("img", file);
+    await addFoto(formData).then((response) => {
       console.log(response);
     });
   };
@@ -37,6 +39,7 @@ function AgregarPubli(props) {
   const onSubmitPublicacion = (e) => {
     e.preventDefault();
     let formData = new FormData();
+
     formData.append("operacion", operacion);
     formData.append("tipo_inmueble", tipo_inmueble);
     formData.append("departamento", departamento);
@@ -60,12 +63,12 @@ function AgregarPubli(props) {
       metros_terreno,
       metros_edificio,
       descripcion,
-      foto,
+      foto: "/Images/" + file.data.name,
     };
     nuevaPublicacion(publicacion);
-    descargarFoto(file);
+    descargarFoto(file.data);
   };
-
+  console.log("file", file.data.name);
   const onChangeValueFoto = (e) => {
     console.log(e.target.files[0]);
     const image = {

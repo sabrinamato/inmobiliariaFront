@@ -36,7 +36,9 @@ export const nuevaPubli = async (propiedad) => {
 };
 
 export const addFoto = async (formData) => {
-  return await API.post("/propiedades/add/foto", formData)
+  return await API.post("/api/propiedades/add/foto", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  })
     .then((response) => {
       return response.data;
     })
