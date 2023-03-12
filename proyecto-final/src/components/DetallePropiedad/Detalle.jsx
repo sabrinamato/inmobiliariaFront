@@ -41,7 +41,7 @@ function Modal() {
         <div className="infoDerecha">
           <h3 className="precioDetalle">U$S {propiedad?.precio}</h3>
           <ul>
-            <li>Tipo de operacion: {propiedad?.operacion}</li>
+            <li> Tipo de operacion: {propiedad?.operacion}</li>
             <li>Tipo de inmueble: {propiedad?.tipo_inmueble}</li>
             <li>Departamento: {propiedad?.departamento}</li>
             <li>Barrio: {propiedad?.barrio}</li>

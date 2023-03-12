@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 /*____________________ List__________________ */
 .list{
     width: 70%;
@@ -272,7 +272,7 @@ color: #abbeff;
     /* gap: 10%; */
     margin-top: 2%;
     margin-left: 10%;
-    background-color: #abbfff9e;
+    background-color: #262b52c5;
     border-radius: 10px;
 }
 .fotoDetalle{
@@ -287,6 +287,7 @@ color: #abbeff;
     width: 50%;
     display: flex;
     align-items: center;
+    
 }
 .precioDetalle{
     position: relative;
@@ -304,6 +305,12 @@ color: #abbeff;
     margin-top: 3%;  
     width: 40%;
     height: 50%;
+    font-family: 'Didact Gothic', sans-serif;
+    color: white;
+}
+.infoDerecha li{
+    font-family: 'Didact Gothic', sans-serif;
+    list-style: none;
 }
 .descripcionDetalle{
     position: absolute;
@@ -312,6 +319,8 @@ color: #abbeff;
     width: 50%;
     top: 65%;
     padding: 2% 8% 0 5%;
+    font-family: 'Didact Gothic', sans-serif;
+    color: white;
 
 }
 .btnClose{
@@ -323,7 +332,7 @@ color: #abbeff;
     display: flex;
     top: 27%;
     text-decoration: none;;
-    color: black;
+    color: white;
     justify-content: center;
     align-items: center;
 }
@@ -336,4 +345,5 @@ color: #abbeff;
 }
 .divAtras{
    display: flex;
+   font-weight: 400;
 }

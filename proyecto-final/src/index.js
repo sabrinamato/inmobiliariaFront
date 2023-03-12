@@ -8,11 +8,13 @@ import Administrar from "./components/Administrar/Administrar";
 import Detalle from "./components/DetallePropiedad/Detalle";
 import LoginComp from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginComp />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/register",
