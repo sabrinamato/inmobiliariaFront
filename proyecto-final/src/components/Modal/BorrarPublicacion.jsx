@@ -64,6 +64,7 @@ function BorrarPublicacion(props) {
           {modalBorrar && (
             <ModalBorrar
               cerrarModalBorrar={openModalBorrar}
+              cerrarBorrarPubli={props.cerrarBorrarPubli}
               propiedad={propiedadBorrar}
             />
           )}

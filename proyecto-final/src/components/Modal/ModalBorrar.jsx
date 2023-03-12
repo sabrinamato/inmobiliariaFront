@@ -11,6 +11,7 @@ function ModalBorrar(props) {
       .then(() => {
         alert("Propiedad eliminada correctamente");
         props.cerrarModalBorrar();
+        props.cerrarBorrarPubli();
       })
       .catch((error) => {
         alert(error);
