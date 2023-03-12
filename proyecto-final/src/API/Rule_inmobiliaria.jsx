@@ -1,3 +1,4 @@
+
 import API from "./Rule_API";
 // const formData = new FormData();
 // formData.append("img", fileInput.files[0]);
@@ -71,3 +72,4 @@ export const modify = async (params, id) => {
       throw error.response.data.error || "Error precesando la solicitud";
     });
 };
+
