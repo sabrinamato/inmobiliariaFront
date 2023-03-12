@@ -49,7 +49,7 @@ function Buscador(props) {
           </option>
           <option value="Casa">Casa</option>
           <option value="Apartamento">Apartamento</option>
-          <option value="Terrenos">Terrenos</option>
+          <option value="Terreno">Terrenos</option>
         </select>
 
         <select

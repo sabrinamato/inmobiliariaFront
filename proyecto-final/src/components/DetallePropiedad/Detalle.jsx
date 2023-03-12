@@ -30,14 +30,15 @@ function Modal() {
       <div className="detalle">
         <Link to={"/home"}>
           <div className="atrasDetalle">
-            <ArrowLeftOutlined /> Atras
+            <div className="divAtras">
+              <ArrowLeftOutlined /> <p> Atras</p>
+            </div>
           </div>
         </Link>
         <div className="divFotoDetalle">
           <img src={propiedad?.foto} alt="" className="fotoDetalle" />
         </div>
         <div className="infoDerecha">
-          <h3>Caracteristicas</h3> <br />
           <h3 className="precioDetalle">U$S {propiedad?.precio}</h3>
           <ul>
             <li>Tipo de operacion: {propiedad?.operacion}</li>
@@ -49,6 +50,8 @@ function Modal() {
             <li>Metraje del terreno: {propiedad?.metros_terreno}</li>
             <li>Metraje edificio: {propiedad?.metros_edificio}</li>
           </ul>
+        </div>
+        <div>
           <p className="descripcionDetalle">
             Descripcion: {propiedad?.descripcion}
           </p>

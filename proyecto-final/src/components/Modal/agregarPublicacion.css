@@ -23,8 +23,22 @@
     border-radius: thin 5px;
     width: 800px;
     height: 30px;
+    background-color: white;
+    border-radius: 0;
+    margin-left: 0%;
+    border-width: 1px;
+    margin: 0;
 }
-
+.formInputDescrip{
+  padding-left: 20px;
+  border-radius: thin 5px;
+  width: 800px;
+  background-color: white;
+  border-radius: 0;
+  margin-left: 0%;
+  border-width: 1px;
+  height: 100px;
+}
 #boton{
     padding:10px 25px;
     margin-left: 70px;
@@ -57,5 +71,11 @@
     }
   }
   .formInput-file{
-    padding: 20px 270px;
+    padding: 10px;
+   
+  }
+  .formDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

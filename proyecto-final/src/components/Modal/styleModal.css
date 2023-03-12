@@ -12,7 +12,7 @@ z-index: 3;
 }
 .verPubli{
     width: 80%;
-    height: 80%;
+    height: 90%;
     box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     background-color: #bcc0e0;
@@ -28,9 +28,9 @@ z-index: 3;
     padding-top: 1%;
 }
 .cerrarModal{
-    position: absolute;
-    left: 95%;
-    top: 2%;
+    position: fixed;
+    left: 85%;
+    top: 10%;
     color: #262b52;
 }
 .cerrarModal:hover{
@@ -142,7 +142,7 @@ z-index: 3;
     
     .borrarPubli{
         width: 80%;
-        height: 80%;
+        height: 90%;
         box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         background-color: #bcc0e0;
@@ -173,7 +173,7 @@ z-index: 3;
     
     .modificarPubli{
         width: 80%;
-        height: 80%;
+        height: 90%;
         box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         background-color: #bcc0e0;

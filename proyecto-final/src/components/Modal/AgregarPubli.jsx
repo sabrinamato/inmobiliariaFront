@@ -4,7 +4,7 @@ import { addFoto, nuevaPubli } from "../../API/Rule_inmobiliaria";
 import "./agregarPublicacion.css";
 
 function AgregarPubli(props) {
-  const [operacion, setOpreacion] = useState("");
+  const [operacion, setOperacion] = useState("");
   const [tipo_inmueble, setTipo_inmueble] = useState("");
   const [departamento, setDepartamento] = useState("");
   const [barrio, setBarrio] = useState("");
@@ -23,9 +23,13 @@ function AgregarPubli(props) {
   });
 
   const nuevaPublicacion = async (publicacion) => {
-    await nuevaPubli(publicacion).then(() => {
-      alert("Publicacion agregada");
-    });
+    await nuevaPubli(publicacion)
+      .then(() => {
+        alert("Publicacion agregada");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   const descargarFoto = async (file) => {
@@ -38,6 +42,7 @@ function AgregarPubli(props) {
 
   const onSubmitPublicacion = (e) => {
     e.preventDefault();
+
     let formData = new FormData();
 
     formData.append("operacion", operacion);
@@ -88,20 +93,35 @@ function AgregarPubli(props) {
             <div className="formtDiv">
               <h2 className="titulo-registro">REGISTRAR</h2>
               <label className="formLabel" htmlFor="operacion">
-                <input
-                  className="formInput"
-                  onChange={(e) => setOpreacion(e.target.value)}
-                  value={operacion}
-                  required
-                  placeholder="Operacion"
-                  type="text"
+                <select
                   name="operacion"
-                />
+                  className="formInput"
+                  value={operacion}
+                  onChange={(e) => setOperacion(e.target.value)}
+                >
+                  <option value="" selected>
+                    Operacion
+                  </option>
+                  <option>Alquila</option>
+                  <option>Venta</option>
+                </select>
               </label>
             </div>
             <div className="formtDiv">
               <label className="formLabel" htmlFor="tipoInmueble">
-                <input
+                <select
+                  name="tipo_inmueble"
+                  className="formInput"
+                  onChange={(e) => setTipo_inmueble(e.target.value)}
+                >
+                  <option value="" selected>
+                    Tipo de Inmueble
+                  </option>
+                  <option value={tipo_inmueble}>Alquila</option>
+                  <option value={tipo_inmueble}>Venta</option>
+                  <option value={tipo_inmueble}>Terreno</option>
+                </select>
+                {/* <input
                   className="formInput"
                   onChange={(e) => setTipo_inmueble(e.target.value)}
                   value={tipo_inmueble}
@@ -109,7 +129,7 @@ function AgregarPubli(props) {
                   placeholder="Tipo de Inmueble"
                   type="text"
                   name="tipoInmueble"
-                />
+                /> */}
               </label>
             </div>
             <div className="formtDiv">
@@ -205,7 +225,7 @@ function AgregarPubli(props) {
             <div className="formtDiv">
               <label className="formLabel" htmlFor="descripcion">
                 <input
-                  className="formInput"
+                  className="formInputDescrip"
                   onChange={(e) => setDescripcion(e.target.value)}
                   value={descripcion}
                   required
@@ -228,11 +248,11 @@ function AgregarPubli(props) {
                   // accept=".png,.jpg"
                 />
               </label>
-            </div>
 
-            <button id="boton" type="submit" name="crear" value="crear">
-              Agregar
-            </button>
+              <button id="boton" type="submit" name="crear" value="crear">
+                Agregar
+              </button>
+            </div>
           </form>
         </div>
       </div>

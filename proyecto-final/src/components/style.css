@@ -96,7 +96,6 @@ a{
     justify-content: center;
     align-items: center;
     height: 78vh; 
-    /* background-image: url("../../public/Images/bg3.jpg"); */
     background-color: #262B52;
     background-position: center;
     background-size: cover;
@@ -256,17 +255,25 @@ color: #abbeff;
     width: 100vw;
     position: fixed;
     top: 0px;
-    background-color: #bcc0e0;
+    background-image: url("../../public/Images/bg.jpg");
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-size:cover;
+  
    
 }
 .detalle{
-    padding: 2% 3% 3% 3%;
-    height: 100%;
-    width: 100%;
+    /* padding: 2% 3% 3% 3%; */
+    height: 70%;
+    width: 80%;
     display: flex;
     justify-content: center;
-    gap: 10%;
-    margin-top: 3%;
+    align-items: center;
+    /* gap: 10%; */
+    margin-top: 2%;
+    margin-left: 10%;
+    background-color: #abbfff9e;
+    border-radius: 10px;
 }
 .fotoDetalle{
     height: 400px;
@@ -276,24 +283,35 @@ color: #abbeff;
     border-color: #262B52;
     border-radius: 10px;
 }
+.divFotoDetalle{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
 .precioDetalle{
-    position: absolute;
-    right: 20%;
-    top: 30%;
+    position: relative;
+    left: 60%;
+    bottom: 20%;
 }
 .infoDerecha{
-    /* position: absolute; */
+    position: relative;
+    right: 5%;
+    bottom: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: self-start; */
     margin-top: 3%;  
-    left: 40%;
     width: 40%;
+    height: 50%;
 }
 .descripcionDetalle{
     position: absolute;
     text-align: justify;
-    left: 46%;
+    left: 40%;
     width: 50%;
-    bottom: 20%;
-    padding: 0 8% 0 5%;
+    top: 65%;
+    padding: 2% 8% 0 5%;
 
 }
 .btnClose{
@@ -301,11 +319,21 @@ color: #abbeff;
 }
 .atrasDetalle{
     position: absolute;
-    right: 5%;
+    right: 12%;
+    display: flex;
     top: 27%;
-    text-decoration: none;
+    text-decoration: none;;
     color: black;
+    justify-content: center;
+    align-items: center;
+}
+.atrasDetalle p{
+    padding-left: 10px;
 }
 .atrasDetalle :hover{
     cursor: pointer;
+    color: #B7F49D;
+}
+.divAtras{
+   display: flex;
 }
