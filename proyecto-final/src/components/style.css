@@ -115,20 +115,20 @@ a{
 
 .fotoPortada{
     background-size: cover;
-    width: 70%;
+    width: 80%;
     height: 88%;
     filter: brightness(50%);
     border-radius: 10px;
     position: relative;
     top: 6%;
-    left: 15%;
+    left: 10%;
 }
 .flechaSiguiente{
     height: 100px;
     width: 100px;
     position: relative;
     bottom: 30%;
-    left: 18%;
+    left: 10%;
    font-size: 55px;
     color: white;
 
@@ -139,7 +139,7 @@ a{
     transform: rotate(-180deg);
     position: relative;
     bottom: 38%;
-    right: 70%;
+    right: 85%;
    font-size: 55px;   
    color: white;
 }
@@ -271,7 +271,7 @@ color: #abbeff;
     /* gap: 10%; */
     margin-top: 2%;
     margin-left: 10%;
-    background-color: #262b52c5;
+    background-color: #abbfffb9;
     border-radius: 10px;
 }
 .fotoDetalle{
@@ -305,7 +305,7 @@ color: #abbeff;
     width: 40%;
     height: 50%;
     font-family: 'Didact Gothic', sans-serif;
-    color: white;
+    color: black;
 }
 .infoDerecha li{
     font-family: 'Didact Gothic', sans-serif;
@@ -319,7 +319,7 @@ color: #abbeff;
     top: 65%;
     padding: 2% 8% 0 5%;
     font-family: 'Didact Gothic', sans-serif;
-    color: white;
+    color: black;
 
 }
 .btnClose{
@@ -331,7 +331,7 @@ color: #abbeff;
     display: flex;
     top: 27%;
     text-decoration: none;;
-    color: white;
+    color: black;
     justify-content: center;
     align-items: center;
 }

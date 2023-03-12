@@ -18,8 +18,8 @@ function Portada() {
       src: "../../Images/casa.png",
     },
     {
-      title: "El lugar que estas buscando",
-      src: "../../Images/apartamento1.jpg",
+      title: "Tu casa a estrenar",
+      src: "../../Images/livingAdministrar.webp",
     },
     {
       title: "Te ayudamos a buscar el hogar perfecto para vos",

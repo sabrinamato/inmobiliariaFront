@@ -1,4 +1,3 @@
-
 import API from "./Rule_API";
 // const formData = new FormData();
 // formData.append("img", fileInput.files[0]);
@@ -14,6 +13,7 @@ export const propiedades = async () => {
       throw error.response.data.error || "Error precesando la solicitud";
     });
 };
+
 export const filtrarPropiedades = async (params) => {
   let url = "/api/propiedades/buscar";
   return await API.get(url, { params })
@@ -72,4 +72,3 @@ export const modify = async (params, id) => {
       throw error.response.data.error || "Error precesando la solicitud";
     });
 };
-
