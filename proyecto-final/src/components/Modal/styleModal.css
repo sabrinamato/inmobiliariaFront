@@ -326,5 +326,9 @@ z-index: 3;
             border-color: #262b52;
             width: 50px;
             height: 30px;
-
+        }
+        .buttonBorrar :hover{
+            cursor: pointer;
+            background-color: #262b52;
+            color: white;
         }

@@ -112,14 +112,15 @@ function AgregarPubli(props) {
                 <select
                   name="tipo_inmueble"
                   className="formInput"
+                  value={tipo_inmueble}
                   onChange={(e) => setTipo_inmueble(e.target.value)}
                 >
                   <option value="" selected>
                     Tipo de Inmueble
                   </option>
-                  <option value={tipo_inmueble}>Alquila</option>
-                  <option value={tipo_inmueble}>Venta</option>
-                  <option value={tipo_inmueble}>Terreno</option>
+                  <option>Casa</option>
+                  <option>Apartamento</option>
+                  <option>Terreno</option>
                 </select>
                 {/* <input
                   className="formInput"
