@@ -205,13 +205,13 @@ z-index: 3;
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: -14%;
+        top: -6%;
         z-index: 3;
         }
         
         .contModificar{
             width: 82%;
-            height: 82%;
+            height: 90%;
             box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
             background-color: #bcc0e0;
@@ -228,10 +228,15 @@ z-index: 3;
         }
         .cerrarFormModificar{
             color: #262b52;
-            position: relative;
-            left:35%;
-            bottom: 35%;
-            z-index: 3;
+            position: absolute;
+            right: 13%;
+            top: 11%;
+            z-index: 4;
+        }
+        .cerrarFormModificar:hover{
+            color: #B7F49D;
+            cursor: pointer;
+            font-size: large;
         }
         .formModificar{
             display: flex;
